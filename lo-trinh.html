@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+<title>Lộ trình IGCSE cho con · Kiến Trẻ International</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Bộ nhận diện theo ebook "Chinh phục IGCSE từ con số 0": đỏ đô + kem + vàng nhũ, logo Kiến Trẻ International. Thanh lộ trình 7 chặng dính trên cùng. */
+:root{
+  --wine:#5C0A10; --wine-deep:#40070B; --wine2:#7E1D24; --wine-soft:#F3E4E1;
+  --gold:#C8A36A; --gold-light:#E7C899; --gold-soft:#F6ECD8;
+  --cream:#F4EFE3; --paper:#FFFFFF; --ink:#2A1A19; --muted:#6F5F59; --line:rgba(92,10,16,.14);
+  --red:#B23A30; --red-soft:#F6DFDB; --amber:#9C6F0E; --amber-soft:#F8ECCC; --green:#2C7A4F; --green-soft:#DDEEE2; --teal:#24685D; --teal-soft:#DEEDE9;
+  --f:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif; --serif:"Playfair Display",Georgia,"Times New Roman",serif; --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 var(--f);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--wine-deep)}
+h1,h2,h3,h4,p{margin:0}
+h1,h2,h3{line-height:1.18;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--wine2)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+mark{background:linear-gradient(transparent 58%,var(--gold-light) 58%);color:inherit;padding:0 .06em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.kicker{font:700 12px/1 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--wine2)}
+.note{font-size:13px;color:var(--muted)}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:linear-gradient(180deg,var(--wine-deep),var(--wine));color:#fff;box-shadow:0 6px 24px rgba(64,7,11,.25)}
+.brandrow{display:flex;align-items:center;gap:14px;padding-block:12px 4px}
+.brandrow img{height:34px;width:auto;display:block}
+.brandrow .ttl{border-left:1px solid rgba(255,255,255,.25);padding-left:14px;font-size:14px;line-height:1.25}
+.brandrow .ttl b{display:block;font:700 16px/1.2 var(--serif);color:var(--gold-light)}
+.brandrow .sp{margin-left:auto;display:flex;gap:8px;align-items:center}
+.hbtn{border:1.5px solid rgba(231,200,153,.5);background:transparent;color:#fff;height:38px;padding:0 14px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:13.5px;text-decoration:none;white-space:nowrap}
+.hbtn:hover{background:rgba(255,255,255,.08)}
+.hbtn.gold{background:var(--gold);color:var(--wine-deep);border-color:var(--gold);font-weight:700}
+.hbtn.gold:hover{background:var(--gold-light)}
+.dlrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.dlpill{border:1.5px solid var(--wine);background:var(--wine);color:#fff;padding:9px 15px;border-radius:999px;font-size:13.5px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.dlpill.sec{background:var(--cream);color:var(--wine)}
+.hbtn svg{width:16px;height:16px;flex:none}
+.navbtn{border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:17px}
+.navbtn:disabled{opacity:.3;cursor:default}
+.navbtn.go{background:var(--gold);color:var(--wine-deep);border-color:var(--gold)}
+.pos{font:600 13px/1 var(--mono);color:rgba(255,255,255,.75);min-width:48px;text-align:center}
+.road{overflow-x:auto;scrollbar-width:none;padding-block:10px 14px}
+.road::-webkit-scrollbar{display:none}
+.road-in{position:relative;display:grid;grid-template-columns:repeat(7,minmax(122px,1fr));min-width:100%}
+.rail{position:absolute;left:17px;right:calc(100% / 7 - 17px);top:16px;height:3px;background:rgba(255,255,255,.16);pointer-events:none}
+.rail i{display:block;height:100%;background:var(--gold);width:0;transition:width .45s cubic-bezier(.2,.7,.2,1)}
+.tab{position:relative;border:0;background:transparent;color:rgba(255,255,255,.72);text-align:left;padding:0 10px 0 0;display:flex;flex-direction:column;gap:6px}
+.tab .b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:700 13px/1 var(--mono);background:var(--wine2);border:2px solid rgba(255,255,255,.25);color:#fff;position:relative;z-index:1;transition:all .25s}
+.tab .t{font-weight:700;font-size:14px;line-height:1.25;color:#fff}
+.tab .w{font-size:12px;line-height:1.3}
+.tab.ok .b{background:var(--green);border-color:#8FD1AA}
+.tab.ok .b span{display:none}
+.tab.ok .b::after{content:"✓";font:700 15px/1 var(--f)}
+.tab.on .b{background:var(--gold);border-color:var(--gold);color:var(--wine-deep);box-shadow:0 0 0 5px rgba(200,163,106,.28)}
+.tab.on.ok .b::after{color:var(--wine-deep)}
+.tab.on .t{color:var(--gold-light)}
+.tab:hover .b{border-color:var(--gold-light)}
+.legend{display:flex;gap:16px;font-size:12px;color:rgba(255,255,255,.7);padding-bottom:10px;margin-top:-4px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+@media (max-width:720px){
+  .brandrow .ttl,.hbtn .lb{display:none}
+  .hbtn{padding:0 11px}
+  .brandrow img{height:28px}
+  .road{padding-block:6px 10px}
+  .road-in{grid-template-columns:repeat(7,minmax(92px,1fr))}
+  .tab .w{display:none}
+  .tab .b{width:28px;height:28px;font-size:12px}
+  .rail{left:14px;right:calc(100% / 7 - 14px);top:13px}
+  .tab .t{font-size:12.5px}
+  .legend{display:none}
+}
+
+/* ---------- stage ---------- */
+main{padding-block:26px 40px}
+.stage{display:none}
+.stage.on{display:block;animation:rise .4s cubic-bezier(.2,.7,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.shead{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+.shead h2{font:800 clamp(28px,3.6vw,42px)/1.15 var(--serif);color:var(--wine);max-width:22ch;margin-top:10px}
+.shead .q{max-width:42ch;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 18px;font-size:15px}
+.shead .q b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--wine2);margin-bottom:4px}
+.grid{display:grid;grid-template-columns:330px minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+.side{background:var(--wine);color:#fff;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:16px;position:sticky;top:200px}
+@media (max-width:900px){.side{position:static}}
+.side .lbl{font:700 11px/1 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light)}
+.side .when{font:700 21px/1.2 var(--serif);margin-top:6px}
+.todo{display:grid;gap:8px}
+.todo label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.08);font-size:14.5px;line-height:1.45;cursor:pointer}
+.todo input{appearance:none;flex:none;width:20px;height:20px;margin-top:1px;border-radius:6px;border:2px solid rgba(255,255,255,.5);display:grid;place-items:center;cursor:pointer}
+.todo input:checked{background:var(--gold);border-color:var(--gold)}
+.todo input:checked::after{content:"✓";color:var(--wine-deep);font:800 13px/1 var(--f)}
+.todo label:has(input:checked) span{opacity:.6;text-decoration:line-through}
+.todo-st{font-size:12.5px;color:rgba(255,255,255,.75)}
+.side .next{border:0;background:var(--gold);color:var(--wine-deep);font-weight:700;padding:12px 16px;border-radius:12px;text-align:left;display:flex;justify-content:space-between;align-items:center}
+.side .next small{display:block;font-weight:500;font-size:12px;opacity:.8}
+.main{display:flex;flex-direction:column;gap:18px;min-width:0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.card h3{font:700 20px/1.25 var(--serif);color:var(--wine)}
+.card .hint{font-size:13.5px;color:var(--muted);margin-top:3px}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:680px){.row3,.row2{grid-template-columns:minmax(0,1fr)}}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.fact b{display:block;font:800 28px/1.1 var(--serif);color:var(--wine)}
+.fact span{font-size:14px;color:var(--muted)}
+.callout{background:var(--gold-soft);border:1px solid #E9D5AE;border-radius:14px;padding:14px 18px;font-size:15px}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-weight:700;font-size:12.5px}
+.pill.g{background:var(--green-soft);color:var(--green)} .pill.a{background:var(--amber-soft);color:var(--amber)} .pill.r{background:var(--red-soft);color:var(--red)} .pill.w{background:var(--wine-soft);color:var(--wine)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:3px;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:7px 14px;font-weight:600;font-size:14px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--wine);color:#fff}
+.out{margin-top:14px;background:var(--cream);border-radius:12px;padding:14px 16px;font-size:15px}
+.tscroll{overflow-x:auto}
+table.t{width:100%;border-collapse:collapse;font-size:14.5px}
+table.t th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--wine);padding:9px 12px}
+table.t th:first-child{border-top-left-radius:10px} table.t th:last-child{border-top-right-radius:10px}
+table.t td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45}
+table.t td:first-child{font-weight:700}
+table.t tr.hl td{background:var(--gold-soft)}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opts div{background:var(--cream);border-radius:12px;padding:10px 14px;font-size:14.5px}
+.warn{background:var(--wine-soft);border:1px solid #E6C7C2;border-radius:18px;padding:20px 22px}
+.warn h3{font:700 19px/1.25 var(--serif);color:var(--wine)}
+.warn ul{margin:10px 0 0;padding-left:1.1em;display:grid;gap:6px;font-size:14.5px}
+.btn-ghost{border:1.5px solid var(--wine);background:transparent;color:var(--wine);border-radius:999px;padding:6px 14px;font-weight:600;font-size:13.5px}
+
+/* stage 1 */
+.flips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+@media (max-width:640px){.flips{grid-template-columns:minmax(0,1fr)}}
+.flip{border:0;padding:0;background:transparent;perspective:900px;height:140px;text-align:left}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip[aria-pressed="true"] .in{transform:rotateY(180deg)}
+.flip .f,.flip .bk{position:absolute;inset:0;border-radius:14px;padding:16px 18px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.flip .f{background:var(--cream);border:1.5px dashed rgba(92,10,16,.25)}
+.flip .f p{font-weight:700;font-size:16px;line-height:1.35}
+.flip .f small{font-size:12.5px;color:var(--wine2);font-weight:600}
+.flip .bk{background:var(--wine);color:#fff;transform:rotateY(180deg);font-size:14.5px;line-height:1.45;justify-content:center}
+.flip .bk b{color:var(--gold-light)}
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+.path div{border-radius:12px;padding:12px;background:var(--cream);font-size:13.5px;line-height:1.35}
+.path div b{display:block;font:700 15px/1.2 var(--mono);margin-bottom:4px;color:var(--wine)}
+.path div.here{background:var(--wine);color:#fff}
+.path div.here b{color:var(--gold-light)}
+@media (max-width:560px){.path{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* stage 2 */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+@media (max-width:720px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{border:2px dashed var(--line);background:var(--paper);border-radius:14px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:128px;transition:border-color .2s,background .2s}
+.tile b{font-size:15px}
+.tile span{font-size:13px;color:var(--muted);line-height:1.4}
+.tile em{margin-top:auto;font-style:normal;font-weight:700;font-size:12.5px;color:var(--wine2)}
+.tile[data-v="0"]{border:2px solid var(--green);background:var(--green-soft)} .tile[data-v="0"] em{color:var(--green)}
+.tile[data-v="1"]{border:2px solid var(--amber);background:var(--amber-soft)} .tile[data-v="1"] em{color:var(--amber)}
+.tile[data-v="2"]{border:2px solid var(--red);background:var(--red-soft)} .tile[data-v="2"] em{color:var(--red)}
+.meter{display:flex;height:10px;border-radius:999px;overflow:hidden;background:var(--line);margin-top:14px}
+.meter i{transition:width .3s}
+
+/* stage 3 */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600;background:var(--wine-soft);color:var(--wine);display:inline-flex;gap:6px;align-items:center;animation:pop .3s}
+.chip small{font:500 11.5px/1 var(--mono);opacity:.8}
+.chip.opt{background:var(--cream);color:var(--muted);border:1.5px dashed var(--line)}
+@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:none;opacity:1}}
+.scale{display:grid;gap:5px;align-items:center;margin-top:12px;font:700 14px/1 var(--mono)}
+.scale span{font:700 13px/1 var(--f)}
+.scale i{font-style:normal;text-align:center;padding:9px 0;border-radius:8px;background:var(--cream);color:#B9AAA5;border:1.5px dashed var(--line)}
+.scale i.on{background:var(--wine-soft);color:var(--wine);border:1.5px solid var(--wine2)}
+.fees{display:grid;margin-top:10px;font-size:14px}
+.fees>div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.fees>div:last-child{border-bottom:0}
+.fees b{font-weight:600}
+.fees .v{text-align:right;color:var(--wine2);font-weight:600}
+.fees small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+details.acc{border-bottom:1px solid var(--line)}
+details.acc summary{list-style:none;cursor:pointer;padding:12px 28px 12px 0;font-weight:700;position:relative;font-size:15px}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:"+";position:absolute;right:4px;top:10px;font:700 18px/1 var(--mono);color:var(--wine2)}
+details.acc[open] summary::after{content:"–"}
+.q15{display:grid;gap:6px;padding-bottom:12px}
+.q15 label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;background:var(--cream);font-size:14.5px;line-height:1.45;cursor:pointer}
+.q15 input{accent-color:var(--wine);width:17px;height:17px;flex:none;margin-top:2px}
+.q15 label:has(input:checked) span{color:var(--muted);text-decoration:line-through}
+
+/* stage 4 */
+.sym{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+@media (max-width:560px){.sym{grid-template-columns:minmax(0,1fr)}}
+.sym button{border:2px solid var(--line);background:var(--paper);border-radius:14px;padding:14px;text-align:left;font-weight:600;font-size:15px;display:flex;gap:10px;align-items:center}
+.sym button i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--cream);display:grid;place-items:center;font:700 13px/1 var(--mono);flex:none}
+.sym button[aria-pressed="true"]{border-color:var(--wine);background:var(--wine);color:#fff}
+.sym button[aria-pressed="true"] i{background:var(--gold);color:var(--wine-deep)}
+.papers{display:grid;gap:8px;margin-top:12px}
+.paper{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;align-items:center;font-size:14px}
+.paper>b{font:700 14px/1 var(--mono);color:var(--wine)}
+.paper div{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:10px 14px;border-radius:10px;background:var(--wine-soft)}
+.paper div.c{background:var(--gold-soft)}
+.cyc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px;counter-reset:c}
+.cyc div{background:var(--cream);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.4}
+.cyc div b{display:block;font-size:15px;margin-bottom:2px}
+.cyc div::before{counter-increment:c;content:"Bước " counter(c);display:block;font:700 11px/1 var(--mono);color:var(--wine2);margin-bottom:6px}
+.cw{display:grid;gap:8px;margin-top:12px}
+.cw div{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--cream);border-radius:12px;padding:10px 14px;font-size:14.5px}
+.cw div b{font-family:var(--mono);color:var(--wine)}
+.dep{display:flex;gap:3px}.dep i{width:16px;height:6px;border-radius:3px;background:var(--line)}.dep i.on{background:var(--wine2)}
+@media (max-width:560px){.cw div{grid-template-columns:minmax(0,1fr) auto}.cw div span{grid-column:1/-1}}
+table.log{border-collapse:collapse;font-size:13px;min-width:860px;width:100%}
+table.log th{background:var(--wine);color:#fff;text-align:left;padding:8px 10px;font-weight:600;font-size:12px}
+table.log td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4}
+table.log td.ms{background:var(--gold-soft)}
+
+/* stage 5 */
+.count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:14px;position:relative}
+.count::before{content:"";position:absolute;left:12.5%;right:12.5%;top:30px;height:3px;background:var(--line)}
+.count button{border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;padding:0 4px}
+.count .c{width:62px;height:62px;border-radius:50%;background:var(--paper);border:2px solid var(--line);display:grid;place-items:center;font:700 15px/1.05 var(--mono);text-align:center}
+.count .c small{display:block;font:500 10px/1 var(--f)}
+.count b{font-size:14px;text-align:center}
+.count button[aria-pressed="true"] .c{background:var(--wine);border-color:var(--wine);color:var(--gold-light)}
+.ryg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.ryg div{border-radius:14px;padding:14px;font-size:14px;line-height:1.45}
+.ryg div b{display:block;font-size:15px;margin-bottom:4px}
+@media (max-width:640px){.ryg{grid-template-columns:minmax(0,1fr)}}
+
+/* stage 6 */
+.dates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px}
+.dates div{background:var(--cream);border-radius:12px;padding:12px 14px}
+.dates div b{display:block;font:700 18px/1.2 var(--mono);color:var(--wine)}
+.dates div span{font-size:13px;color:var(--muted)}
+.dates div.k{background:var(--gold-soft);outline:2px solid var(--gold)}
+@media (max-width:640px){.dates{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.qs{display:grid;gap:12px;margin-top:14px}
+.qs p{font-weight:600;font-size:14.5px;margin-bottom:6px}
+
+/* stage 7 */
+.exits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+@media (max-width:720px){.exits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.exits button{border:2px solid var(--line);background:var(--paper);border-radius:14px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:112px}
+.exits button b{font-size:15px;line-height:1.3}
+.exits button span{font-size:12.5px;color:var(--muted)}
+.exits button[aria-pressed="true"]{border-color:var(--wine);background:var(--wine);color:#fff}
+.exits button[aria-pressed="true"] span{color:rgba(255,255,255,.75)}
+ul.yn{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px;font-size:14.5px}
+ul.yn li{padding-left:26px;position:relative}
+ul.yn li::before{position:absolute;left:0;top:0;font-weight:800}
+ul.yn.y li::before{content:"✓";color:var(--green)}
+ul.yn.n li::before{content:"✕";color:var(--red)}
+.contact{background:linear-gradient(135deg,var(--wine-deep),var(--wine2));color:#fff;border-radius:18px;padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.contact h3{font:800 23px/1.2 var(--serif);color:var(--gold-light)}
+.contact a{color:#fff}
+.contact .cv{font:600 17px/1 var(--mono);background:rgba(255,255,255,.1);padding:12px 14px;border-radius:10px;user-select:all}
+.contact .cb{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.contact button{border:0;background:var(--gold);color:var(--wine-deep);font-weight:700;padding:12px 16px;border-radius:10px}
+
+/* drawer tra cứu */
+.scrim{position:fixed;inset:0;background:rgba(42,26,25,.45);z-index:40;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(520px,100%);background:var(--cream);z-index:41;transform:translateX(102%);transition:transform .3s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;padding:calc(18px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) 20px;box-shadow:-10px 0 40px rgba(42,26,25,.25)}
+.drawer.on{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.drawer h3{font:800 22px/1.2 var(--serif);color:var(--wine)}
+.drawer .x{border:0;background:var(--paper);width:36px;height:36px;border-radius:50%;font-size:18px}
+.drawer input[type=search]{margin-top:14px;width:100%;font:inherit;font-size:15px;padding:11px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.drawer input[type=search]:focus{outline:none;border-color:var(--wine2)}
+.drawer .res{margin-top:14px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:16px;padding-right:4px}
+.drawer h4{font:700 12px/1 var(--f);letter-spacing:.12em;text-transform:uppercase;color:var(--wine2);margin-bottom:8px}
+.dl{display:grid;gap:6px}
+.dl div{background:var(--paper);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.45}
+.dl div b{display:block}
+.codes{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.codes span{font:600 12px/1 var(--mono);padding:5px 8px;border-radius:6px;background:var(--wine-soft);color:var(--wine)}
+.codes span.n{background:var(--gold-soft);color:var(--amber)}
+.empty{font-size:14px;color:var(--muted)}
+
+footer{padding-block:10px 40px;font-size:12.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brandrow">
+      <img src="data:image/png;base64,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" alt="Kiến Trẻ International">
+      <div class="ttl"><b>Chinh phục IGCSE từ con số 0</b>Lộ trình 7 chặng cho phụ huynh</div>
+      <div class="sp">
+        <button type="button" class="hbtn" id="openFind" aria-label="Tra cứu mã môn và thuật ngữ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="lb">Tra cứu nhanh</span></button>
+        <a class="hbtn gold" id="pdfCompactLink" href="./ebook-igcse-2026-rut-gon.pdf" target="_blank" rel="noopener" aria-label="Tải ebook PDF rút gọn 31 trang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span class="lb">PDF 31 trang</span></a>
+        <a class="hbtn" id="pdfLink" href="./ebook-igcse-2026.pdf" target="_blank" rel="noopener" aria-label="Tải ebook PDF đầy đủ 39 trang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span class="lb">PDF 39 trang</span></a>
+        <button type="button" class="navbtn" id="prev" aria-label="Chặng trước">←</button>
+        <span class="pos" id="pos">1 / 7</span>
+        <button type="button" class="navbtn go" id="next" aria-label="Chặng sau">→</button>
+      </div>
+    </div>
+    <nav class="road" aria-label="Các chặng"><div class="road-in" id="road"><div class="rail"><i id="rail"></i></div></div></nav>
+    <div class="legend"><span><i style="background:var(--gold)"></i>Đang xem</span><span><i style="background:var(--green)"></i>Đã tick đủ việc của ba mẹ</span></div>
+  </div>
+</header>
+
+<main class="wrap" id="stages">
+
+<!-- ===== 1 ===== -->
+<section class="stage" data-t="Hiểu IGCSE" data-w="Trước khi quyết định">
+  <div class="shead">
+    <div><div class="kicker">Chặng 1 · Hiểu IGCSE</div><h2>IGCSE là chứng chỉ <mark>từng môn</mark> cho tuổi 14–16</h2></div>
+    <div class="q"><b>Ba mẹ thường hỏi</b>"IGCSE có phải bằng quốc tế không? Học xong con được gì?"</div>
+  </div>
+  <div class="grid">
+    <aside class="side">
+      <div><div class="lbl">Thời điểm</div><div class="when">Trước khi quyết định</div></div>
+      <div><div class="lbl" style="margin-bottom:8px">Việc của ba mẹ</div>
+        <div class="todo" data-todo="1">
+          <label><input type="checkbox"><span>Xác định mục tiêu sau 16 tuổi: du học hay đại học trong nước?</span></label>
+          <label><input type="checkbox"><span>Hỏi trường dạy IGCSE của hội đồng nào (Cambridge, Pearson Edexcel hay OxfordAQA)</span></label>
+          <label><input type="checkbox"><span>Đọc yêu cầu đầu vào của 1–2 trường đại học mục tiêu (chặng 7)</span></label>
+        </div><p class="todo-st"></p></div>
+      <button type="button" class="next" data-go="+1"><span>Chặng 2<small>Con sẵn sàng chưa?</small></span>→</button>
+    </aside>
+    <div class="main">
+      <div class="row3">
+        <div class="fact"><b>2 năm</b><span>Học trong khoảng Year 10–11 (14–16 tuổi)</span></div>
+        <div class="fact"><b>8 môn = 8</b><span>Mỗi môn một kết quả riêng, không đỗ/trượt trọn gói</span></div>
+        <div class="fact"><b>~130 giờ</b><span>Học có hướng dẫn cho mỗi môn (Cambridge)</span></div>
+      </div>
+      <div class="card">
+        <h3>Lật thẻ: 4 hiểu lầm hay gặp</h3>
+        <p class="hint">Bấm vào từng thẻ để xem sự thật.</p>
+        <div class="flips" id="flips">
+          <button type="button" class="flip" aria-pressed="false"><div class="in"><div class="f"><p>"Đỗ IGCSE là có bằng tốt nghiệp cấp 2 quốc tế."</p><small>Bấm để lật ↻</small></div><div class="bk"><span><b>Sai.</b> IGCSE là chứng chỉ từng môn, không thay bằng THCS hay THPT của Việt Nam.</span></div></div></button>
+          <button type="button" class="flip" aria-pressed="false"><div class="in"><div class="f"><p>"IGCSE bị coi thấp hơn GCSE của học sinh Anh."</p><small>Bấm để lật ↻</small></div><div class="bk"><span><b>Sai.</b> Ecctis (UK NARIC, 2019) xác nhận IGCSE tương đương GCSE của Anh theo từng bậc điểm.</span></div></div></button>
+          <button type="button" class="flip" aria-pressed="false"><div class="in"><div class="f"><p>"Có IGCSE là vào thẳng đại học nước ngoài."</p><small>Bấm để lật ↻</small></div><div class="bk"><span><b>Sai.</b> Đại học xét A Level, IB Diploma hoặc tương đương. IGCSE là bước đệm để chọn môn.</span></div></div></button>
+          <button type="button" class="flip" aria-pressed="false"><div class="in"><div class="f"><p>"Điểm IGCSE quy đổi được sang thang 10."</p><small>Bấm để lật ↻</small></div><div class="bk"><span><b>Sai.</b> Không có bảng quy đổi chính thức. Hỏi thẳng nơi tiếp nhận họ dùng quy định nào.</span></div></div></button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>IGCSE nằm ở đâu?</h3>
+        <div class="path">
+          <div><b>5–11</b>Primary<br><span class="muted">Checkpoint: bài chẩn đoán</span></div>
+          <div><b>11–14</b>Lower Secondary<br><span class="muted">Checkpoint: bài chẩn đoán</span></div>
+          <div class="here"><b>14–16 · IGCSE</b>Chứng chỉ từng môn</div>
+          <div><b>16–19</b>AS &amp; A Level<br><span class="muted">Dùng để xét đại học</span></div>
+        </div>
+        <div style="margin-top:16px"><div class="seg" id="cmpSeg"><button type="button" data-c="board" aria-pressed="true">Cambridge hay Pearson?</button><button type="button" data-c="prog" aria-pressed="false">So với chương trình khác</button></div></div>
+        <div class="tscroll" style="margin-top:12px" id="cmpBoard">
+          <table class="t">
+            <thead><tr><th></th><th>Cambridge IGCSE</th><th>Pearson Edexcel Int. GCSE</th></tr></thead>
+            <tbody>
+              <tr><td>Số môn</td><td>Hơn 70 (hơn 30 môn ngôn ngữ)</td><td>37</td></tr>
+              <tr><td>Thang điểm</td><td>A*–G hoặc 9–1, tùy mã môn</td><td>9–1 (7 ≈ A, 4 ≈ C)</td></tr>
+              <tr><td>Cấp độ</td><td>Core / Extended</td><td>Foundation / Higher (một số môn)</td></tr>
+              <tr><td>Kỳ thi</td><td>Tháng 5–6 và cuối tháng 9–11</td><td>Tháng 5–6 và tháng 11 (thay kỳ tháng 1 từ 2023)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tscroll" style="margin-top:12px" id="cmpProg" hidden>
+          <table class="t" style="min-width:560px">
+            <thead><tr><th>Chương trình</th><th>Tuổi</th><th>Bản chất</th><th>Khác IGCSE ở đâu</th></tr></thead>
+            <tbody>
+              <tr><td>Cambridge Checkpoint</td><td class="num">~11 &amp; 14</td><td>Bài chẩn đoán cuối Primary / Lower Secondary</td><td>Chỉ đo tiến bộ, không phải chứng chỉ quốc tế</td></tr>
+              <tr><td>IB MYP</td><td class="num">11–16</td><td>Khung chương trình liên môn (eAssessment, ePortfolio)</td><td>Chỉ cấp kết quả từng môn (MYP course results) nếu trường đăng ký eAssessment</td></tr>
+              <tr class="hl"><td>Cambridge IGCSE</td><td class="num">14–16</td><td>Chứng chỉ theo từng môn, A*–G hoặc 9–1</td><td>Mốc đối chiếu</td></tr>
+              <tr><td>Pearson Int. GCSE</td><td class="num">14–16</td><td>Chứng chỉ theo từng môn, 9–1</td><td>Khác hội đồng, cấu trúc đề, cấp độ Foundation/Higher</td></tr>
+              <tr><td>AS &amp; A Level</td><td class="num">16+</td><td>Chứng chỉ dự bị đại học chuyên sâu (thường 3–4 môn)</td><td>Bậc cao hơn, dùng trực tiếp để tuyển sinh</td></tr>
+              <tr><td>IB Diploma</td><td class="num">16–19</td><td>Bằng dự bị đại học trọn gói (6 nhóm môn, luận văn, hoạt động)</td><td>Tương đương cấp độ A Level, học sau IGCSE</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2 ===== -->
+<section class="stage" data-t="Con sẵn sàng?" data-w="3–6 tháng trước khi chuyển">
+  <div class="shead">
+    <div><div class="kicker">Chặng 2 · Con sẵn sàng chưa?</div><h2>Tự chấm 6 điều trước khi chuyển hệ</h2></div>
+    <div class="q"><b>Ba mẹ thường hỏi</b>"Con học hệ Bộ, chuyển sang IGCSE có muộn không?"</div>
+  </div>
+  <div class="grid">
+    <aside class="side">
+      <div><div class="lbl">Thời điểm</div><div class="when">3–6 tháng trước khi chuyển</div></div>
+      <div><div class="lbl" style="margin-bottom:8px">Việc của ba mẹ</div>
+        <div class="todo" data-todo="2">
+          <label><input type="checkbox"><span>Cùng con chấm 6 điều bên cạnh, thật trung thực</span></label>
+          <label><input type="checkbox"><span>Nếu có từ 2 ô "Chưa": lên kế hoạch 3–6 tháng chuẩn bị trước khi chuyển</span></label>
+          <label><input type="checkbox"><span>Dự trù tài chính cho 4–5 năm, không chỉ 2 năm</span></label>
+        </div><p class="todo-st"></p></div>
+      <button type="button" class="next" data-go="+1"><span>Chặng 3<small>Chọn trường &amp; môn</small></span>→</button>
+    </aside>
+    <div class="main">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3>Bấm vào từng ô để chấm</h3><button type="button" class="btn-ghost" id="readyReset">Chấm lại từ đầu</button></div>
+        <p class="hint">Mỗi lần bấm đổi mức: Sẵn sàng → Cần hỗ trợ → Chưa sẵn sàng.</p>
+        <div class="tiles" id="tiles"></div>
+        <div class="meter" id="meter"></div>
+        <div class="out" id="readyOut"></div>
+      </div>
+      <div class="row3">
+        <div class="fact"><b style="font-size:20px">Tiếng Anh học thuật</b><span>Nói giỏi vẫn mất điểm nếu không phân biệt <i>describe</i> với <i>explain</i>.</span></div>
+        <div class="fact"><b style="font-size:20px">Ít dẫn dắt</b><span>Đề ít chia nhỏ gợi ý, con phải tự lập luận lời giải.</span></div>
+        <div class="fact"><b style="font-size:20px">6–10 môn</b><span>Mỗi môn khoảng 130 giờ học, chưa kể tự ôn.</span></div>
+      </div>
+      <div class="callout"><b>3 tháng đầu sau khi chuyển:</b> đọc trước bài hôm sau · lập sổ thuật ngữ Anh–Việt theo môn · làm quen dạng đề và mark scheme.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 ===== -->
+<section class="stage" data-t="Chọn trường &amp; môn" data-w="Trước Year 10">
+  <div class="shead">
+    <div><div class="kicker">Chặng 3 · Chọn trường &amp; môn</div><h2><mark>7–8 môn</mark> điểm cao tốt hơn 10–11 môn điểm trung bình</h2></div>
+    <div class="q"><b>Ba mẹ thường hỏi</b>"Con nên học bao nhiêu môn, môn nào? Có cần trường quốc tế không?"</div>
+  </div>
+  <div class="grid">
+    <aside class="side">
+      <div><div class="lbl">Thời điểm</div><div class="when">Trước Year 10</div></div>
+      <div><div class="lbl" style="margin-bottom:8px">Việc của ba mẹ</div>
+        <div class="todo" data-todo="3">
+          <label><input type="checkbox"><span>Tra 3–4 môn A Level/IB cần có cho ngành đại học dự kiến</span></label>
+          <label><input type="checkbox"><span>Mang phiếu 15 câu hỏi (bên cạnh) khi đi gặp trường</span></label>
+          <label><input type="checkbox"><span>Yêu cầu mọi cam kết về hệ học, chứng chỉ bằng văn bản</span></label>
+        </div><p class="todo-st"></p></div>
+      <button type="button" class="next" data-go="+1"><span>Chặng 4<small>Year 10 · Xây nền</small></span>→</button>
+    </aside>
+    <div class="main">
+      <div class="card">
+        <h3>Con muốn học ngành gì?</h3>
+        <p class="hint">Chọn một hướng, tổ hợp gợi ý hiện ngay bên dưới.</p>
+        <div class="seg" id="goal" style="margin-top:12px">
+          <button type="button" data-g="y" aria-pressed="false">Y / Dược</button>
+          <button type="button" data-g="kt" aria-pressed="false">Kỹ thuật</button>
+          <button type="button" data-g="ec" aria-pressed="false">Kinh tế</button>
+          <button type="button" data-g="ch" aria-pressed="true">Chưa rõ</button>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div class="out" id="goalOut"></div>
+      </div>
+      <div class="row2">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center"><h3>Core hay Extended?</h3><div class="seg" id="scaleSeg"><button type="button" data-s="ag" aria-pressed="true">A*–G</button><button type="button" data-s="91" aria-pressed="false">9–1</button></div></div>
+          <p class="hint">Ô đỏ: bậc điểm con có thể đạt ở mỗi cấp.</p>
+          <div class="scale" id="scale"></div>
+          <p style="font-size:14px;margin-top:12px" id="scaleTxt"></p>
+        </div>
+        <div class="card">
+          <h3>5 cách học và chi phí tham khảo</h3>
+          <div class="fees">
+            <div><b>1. Trường quốc tế<small>Nhóm cao (TP.HCM: BIS, ISHCMC, AIS, BVIS)<br>Nhóm thấp hơn</small></b><span class="v num">23.600–38.300<br>11.900–20.000<small>USD / năm</small></span></div>
+            <div><b>2. Song ngữ đa hệ</b><span class="v">tùy trường, tùy hệ</span></div>
+            <div><b>3. Hệ tích hợp</b><span class="v">~50–70% học phí trường QT</span></div>
+            <div><b>4. Học bổ trợ ngoài giờ</b><span class="v">theo số môn</span></div>
+            <div><b>5. Thi tự do<small>qua British Council</small></b><span class="v num">lệ phí ~4–6 triệu<small>VNĐ / môn</small></span></div>
+          </div>
+          <p class="note" style="margin-top:8px">Học phí năm học 2026–2027, chưa gồm phụ phí; Hà Nội có mặt bằng tương đương. Luôn kiểm tra lại trước khi đăng ký.</p>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="card">
+          <h3>Tiếng Anh: First Language hay ESL?</h3>
+          <div class="opts">
+            <div><b>First Language English</b> <span class="num muted">0500 / 0990</span><br>Cho học sinh dùng tiếng Anh như bản ngữ hoặc thành thạo.</div>
+            <div><b>English as a Second Language</b> <span class="num muted">0510 / 0511</span><br>Cho học sinh học tiếng Anh như ngôn ngữ thứ hai.</div>
+          </div>
+          <p class="note" style="margin-top:8px">Hai môn không thi chung một kỳ. Có thể thi ESL trước, First Language ở kỳ sau.</p>
+        </div>
+        <div class="card">
+          <h3>Khoa học: gộp hay tách?</h3>
+          <div class="opts">
+            <div><b>Combined Science</b> <span class="num muted">0653</span><br>Gộp Lý – Hóa – Sinh, bằng 1 chứng chỉ, kiến thức nhẹ hơn.</div>
+            <div><b>Co-ordinated Sciences</b> <span class="num muted">0654 / 0973</span><br>Bằng 2 chứng chỉ. Nhiều trường vẫn nhận điểm cao (AA/BB) để học tiếp A Level, IB.</div>
+            <div><b>3 môn riêng</b> <span class="num muted">0625 · 0620 · 0610</span><br>Nền sâu và rộng cửa nhất cho Y, Dược, Kỹ thuật.</div>
+          </div>
+        </div>
+      </div>
+      <div class="warn">
+        <h3>Nếu con thi tự do</h3>
+        <ul>
+          <li>Đăng ký qua British Council (Hà Nội, TP.HCM). Hạn của Cambridge cho kỳ tháng 11/2026 là <b>16/08</b>; British Council đóng hạn sớm hơn, xem lịch từng kỳ tại <a href="https://www.britishcouncil.vn/" target="_blank" rel="noopener">britishcouncil.vn</a>.</li>
+          <li>Tránh môn có coursework hoặc portfolio bắt buộc.</li>
+          <li>Môn Khoa học IGCSE có <b>Paper 6</b> (bài viết thay phòng lab). Lên Cambridge AS/A Level Sciences thì không còn lựa chọn này; Pearson International A Level có bài viết thay thực hành ở Unit 3 và Unit 6.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3>15 câu nên hỏi trường trước khi nhập học</h3><span class="pill w" id="q15count">Đã hỏi 0/15</span></div>
+        <p class="hint">Mở một nhóm, nhóm khác tự đóng. Tick câu đã hỏi. Bản in có ô ghi chú ở Phụ lục B3 của ebook.</p>
+        <div id="q15" style="margin-top:6px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 ===== -->
+<section class="stage" data-t="Year 10 · Xây nền" data-w="Năm thứ nhất">
+  <div class="shead">
+    <div><div class="kicker">Chặng 4 · Year 10 · Xây nền</div><h2>Học nhiều mà điểm không tăng? Tìm đúng lỗi trước</h2></div>
+    <div class="q"><b>Con thường nói</b>"Con đã làm rất nhiều đề mà điểm vẫn đứng ở C/B."</div>
+  </div>
+  <div class="grid">
+    <aside class="side">
+      <div><div class="lbl">Thời điểm</div><div class="when">Năm thứ nhất</div></div>
+      <div><div class="lbl" style="margin-bottom:8px">Việc của ba mẹ</div>
+        <div class="todo" data-todo="4">
+          <label><input type="checkbox"><span>Tải Syllabus đúng mã môn, đúng năm thi (vd. Toán 0580 bản 2025–2027)</span></label>
+          <label><input type="checkbox"><span>Hỏi con: "Đã đánh dấu được bao nhiêu phần Syllabus?"</span></label>
+          <label><input type="checkbox"><span>Xem nhật ký lỗi của con mỗi tháng, không chỉ xem điểm</span></label>
+        </div><p class="todo-st"></p></div>
+      <button type="button" class="next" data-go="+1"><span>Chặng 5<small>Year 11 · Tăng tốc</small></span>→</button>
+    </aside>
+    <div class="main">
+      <div class="card">
+        <h3>Con mất điểm vì đâu?</h3>
+        <p class="hint">Chọn dấu hiệu giống con nhất.</p>
+        <div class="sym" id="sym"></div>
+        <div class="out" id="symOut"></div>
+      </div>
+      <div class="row2">
+        <div class="card">
+          <h3>Một đề Toán trông thế nào</h3>
+          <p class="hint">Cambridge 0580 · Extended · 2025–2027</p>
+          <div class="papers">
+            <div class="paper"><b>Paper 2</b><div><span><b>Không máy tính</b></span><span class="num">2 giờ · 100 điểm</span></div></div>
+            <div class="paper"><b>Paper 4</b><div class="c"><span><b>Có máy tính</b></span><span class="num">2 giờ · 100 điểm</span></div></div>
+          </div>
+          <p style="font-size:14px;margin-top:12px">Một nửa điểm không dùng máy tính. Khoảng <b class="num">1,2 phút</b> cho mỗi điểm.</p>
+        </div>
+        <div class="card">
+          <h3>Chữa kỹ 1 đề hơn làm vội 3 đề</h3>
+          <div class="cyc">
+            <div><b>Thi như thật</b>Bấm giờ, không mở sách</div>
+            <div><b>Chấm khắt khe</b>Khớp mark scheme mới cho điểm</div>
+            <div><b>Ghi nhật ký lỗi</b>Mỗi lỗi một dòng (mẫu bên dưới)</div>
+            <div><b>Làm lại</b>Sau 1–2 tuần, câu cùng dạng</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Đề hỏi gì? Nhìn động từ đầu câu</h3>
+        <p class="hint">Command words quy định độ sâu câu trả lời.</p>
+        <div class="cw">
+          <div><b>State / Define</b><span>Nêu ngắn gọn, 1–2 dòng</span><span class="dep"><i class="on"></i><i></i><i></i><i></i></span></div>
+          <div><b>Describe</b><span>Mô tả xu hướng, số liệu</span><span class="dep"><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+          <div><b>Explain</b><span>Giải thích chuỗi nguyên nhân → kết quả</span><span class="dep"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+          <div><b>Evaluate / Discuss</b><span>Phân tích hai mặt, kết luận có căn cứ</span><span class="dep"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+        </div>
+        <p class="note" style="margin-top:10px">Lỗi hay gặp theo báo cáo giám khảo: chỉ nêu hiện tượng mà quên giải thích tác dụng; viết lan man khi đề chỉ yêu cầu State.</p>
+      </div>
+      <div class="card">
+        <h3>Mẫu nhật ký lỗi 8 cột</h3>
+        <p class="hint">Hai dòng ví dụ minh họa. Bản in viết tay ở Phụ lục B4 của ebook.</p>
+        <div class="tscroll" style="margin-top:12px">
+          <table class="log">
+            <thead><tr><th>Ngày</th><th>Đề &amp; câu</th><th>Chủ đề</th><th>Kiểu lỗi</th><th>Con đã viết</th><th>Mark scheme cần</th><th>Cách sửa</th><th>Làm lại</th></tr></thead>
+            <tbody>
+              <tr><td class="num">12/10</td><td class="num">0625/42 Q3b</td><td>Thermal physics</td><td>2 · Kỹ năng</td><td>Heat rises because less dense</td><td class="ms">Warm air expands, density decreases, rises (convection)</td><td>Nêu đủ chuỗi: nở ra → giảm khối lượng riêng → đi lên</td><td class="num">26/10</td></tr>
+              <tr><td class="num">15/10</td><td class="num">0580/22 Q14</td><td>Quadratic eq.</td><td>2 · Kỹ năng</td><td>Chỉ ghi x = 3 (thiếu bước, thiếu nghiệm)</td><td class="ms">(x−3)(x+2) = 0 → x = 3 hoặc x = −2</td><td>Viết đủ bước tách nhân tử, kiểm đủ mọi nghiệm</td><td class="num">29/10</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 ===== -->
+<section class="stage" data-t="Year 11 · Tăng tốc" data-w="6 tháng → ngày thi">
+  <div class="shead">
+    <div><div class="kicker">Chặng 5 · Year 11 · Tăng tốc</div><h2>Đếm ngược tới ngày thi</h2></div>
+    <div class="q"><b>Ba mẹ thường hỏi</b>"Nên ôn trước bao lâu? Con thức khuya có sao không?"</div>
+  </div>
+  <div class="grid">
+    <aside class="side">
+      <div><div class="lbl">Thời điểm</div><div class="when">6 tháng → ngày thi</div></div>
+      <div><div class="lbl" style="margin-bottom:8px">Việc của ba mẹ</div>
+        <div class="todo" data-todo="5">
+          <label><input type="checkbox"><span>Giữ giờ ngủ 8–10 tiếng, kể cả mùa thi</span></label>
+          <label><input type="checkbox"><span>Coi điểm thi thử là tín hiệu sửa lỗi, không phải bản án</span></label>
+          <label><input type="checkbox"><span>Để ý dấu hiệu quá tải: mất ngủ, cáu gắt, sợ mở bài môn yếu</span></label>
+        </div><p class="todo-st"></p></div>
+      <button type="button" class="next" data-go="+1"><span>Chặng 6<small>Nhận kết quả</small></span>→</button>
+    </aside>
+    <div class="main">
+      <div class="card">
+        <h3>Bấm từng mốc để xem cần làm gì</h3>
+        <div class="count" id="count">
+          <button type="button" data-i="0" aria-pressed="true"><span class="c">6<small>tháng</small></span><b>Tăng tốc</b></button>
+          <button type="button" data-i="1" aria-pressed="false"><span class="c">6<small>tuần</small></span><b>Đề trọn vẹn</b></button>
+          <button type="button" data-i="2" aria-pressed="false"><span class="c">2<small>tuần</small></span><b>Về đích</b></button>
+          <button type="button" data-i="3" aria-pressed="false"><span class="c">24<small>giờ</small></span><b>Trước ngày thi</b></button>
+        </div>
+        <div class="out" id="countOut"></div>
+      </div>
+      <div class="card">
+        <h3>Xếp môn vào 3 nhóm để chia giờ tự học</h3>
+        <div class="ryg">
+          <div style="background:var(--red-soft)"><b style="color:var(--red)">Đỏ · rủi ro cao</b>Thi thử thấp hơn mục tiêu, hoặc là môn tiên quyết A Level. <b style="display:inline">~50% giờ tự học.</b></div>
+          <div style="background:var(--amber-soft)"><b style="color:var(--amber)">Vàng · rủi ro vừa</b>Gần mục tiêu, lỗi chủ yếu do kỹ năng trả lời. Luyện đều theo mark scheme.</div>
+          <div style="background:var(--green-soft)"><b style="color:var(--green)">Xanh · rủi ro thấp</b>Đã đạt mục tiêu ổn định. Khoảng 1 buổi mỗi tuần giữ nhịp.</div>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="fact"><b>8–10 tiếng</b><span>Ngủ mỗi đêm ở tuổi 13–18. Thiếu ngủ dễ đọc sai đề, tính nhầm.</span></div>
+        <div class="fact"><b>60 phút</b><span>Vận động mỗi ngày, theo khuyến nghị WHO cho tuổi 5–17.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6 ===== -->
+<section class="stage" data-t="Nhận kết quả" data-w="Tháng 8 hoặc tháng 1">
+  <div class="shead">
+    <div><div class="kicker">Chặng 6 · Nhận kết quả</div><h2>Không có con số cố định "bao nhiêu phần trăm thì được A*"</h2></div>
+    <div class="q"><b>Ba mẹ thường hỏi</b>"Con thiếu vài điểm, có nên phúc khảo không?"</div>
+  </div>
+  <div class="grid">
+    <aside class="side">
+      <div><div class="lbl">Thời điểm</div><div class="when">Tháng 8 hoặc tháng 1</div></div>
+      <div><div class="lbl" style="margin-bottom:8px">Việc của ba mẹ</div>
+        <div class="todo" data-todo="6">
+          <label><input type="checkbox"><span>Giữ bản gốc và bản scan phiếu báo điểm, chứng chỉ</span></label>
+          <label><input type="checkbox"><span>Hỏi hạn phúc khảo nội bộ của trường (thường sớm hơn hạn Cambridge)</span></label>
+          <label><input type="checkbox"><span>Xin trường bản sao bài làm (Access to Scripts) trước khi quyết định</span></label>
+          <label><input type="checkbox"><span>Cần điểm gấp để nhập học: hỏi trường về dịch vụ phúc khảo ưu tiên (Priority)</span></label>
+        </div><p class="todo-st"></p></div>
+      <button type="button" class="next" data-go="+1"><span>Chặng 7<small>Sau IGCSE</small></span>→</button>
+    </aside>
+    <div class="main">
+      <div class="card">
+        <h3>Lịch Cambridge IGCSE</h3>
+        <div class="seg" id="series" style="margin-top:12px"><button type="button" data-s="jun" aria-pressed="true">Kỳ tháng 6/2026</button><button type="button" data-s="nov" aria-pressed="false">Kỳ tháng 11/2026</button></div>
+        <div class="dates" id="dates"></div>
+        <p class="note" style="margin-top:10px">Theo Cambridge Key Dates 2026. Ngưỡng điểm đổi theo độ khó đề, không hạ vì thí sinh làm kém.</p>
+      </div>
+      <div class="card">
+        <h3>Có nên phúc khảo?</h3>
+        <div class="qs">
+          <div><p>Con thiếu bao nhiêu điểm thô so với bậc trên?</p><div class="seg" id="q1"><button type="button" data-v="1" aria-pressed="true">1–3 điểm</button><button type="button" data-v="2" aria-pressed="false">4–5 điểm</button><button type="button" data-v="3" aria-pressed="false">6 trở lên</button></div></div>
+          <div><p>Môn thuộc loại nào?</p><div class="seg" id="q2"><button type="button" data-v="e" aria-pressed="true">Viết luận</button><button type="button" data-v="c" aria-pressed="false">Tính toán / trắc nghiệm</button></div></div>
+          <div><p>Bậc điểm này có quyết định việc lên A Level hay hồ sơ đại học?</p><div class="seg" id="q3"><button type="button" data-v="y" aria-pressed="true">Có</button><button type="button" data-v="n" aria-pressed="false">Không</button></div></div>
+        </div>
+        <div class="out" id="earOut"></div>
+      </div>
+      <div class="card">
+        <h3>Kết quả dưới kỳ vọng? 4 hướng xử lý</h3>
+        <div class="opts">
+          <div><b>Thi lại (resit)</b> riêng môn chưa đạt ở kỳ kế tiếp: tháng 11 hoặc tháng 6 năm sau.</div>
+          <div><b>Điều chỉnh tổ hợp môn</b> ở A Level hoặc IB, nghiêng về môn thế mạnh.</div>
+          <div><b>Chuyển lộ trình Foundation</b> sau năm lớp 11 nếu phù hợp đích đến.</div>
+          <div><b>Quay về chương trình Việt Nam</b> nếu gia đình đổi định hướng.</div>
+        </div>
+      </div>
+      <div class="warn">
+        <h3>Tuyệt đối tránh "đề rò rỉ"</h3>
+        <p style="font-size:14.5px;margin-top:6px">Hội đồng thi có quy trình giám sát nghiêm ngặt. Ví dụ tháng 5/2026, một bài AS Mathematics (9709/12) bị lộ: Cambridge cho thí sinh ở các khu vực bị ảnh hưởng thi lại đề mới ngày 09/06/2026. Không tìm, không chia sẻ đề lộ trên mạng xã hội.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7 ===== -->
+<section class="stage" data-t="Sau IGCSE" data-w="Từ 16 tuổi">
+  <div class="shead">
+    <div><div class="kicker">Chặng 7 · Sau IGCSE</div><h2>IGCSE là <mark>bước đệm</mark>, đại học xét A Level hoặc IB</h2></div>
+    <div class="q"><b>Ba mẹ thường hỏi</b>"Học xong IGCSE thì con đi tiếp đường nào?"</div>
+  </div>
+  <div class="grid">
+    <aside class="side">
+      <div><div class="lbl">Thời điểm</div><div class="when">Từ 16 tuổi</div></div>
+      <div><div class="lbl" style="margin-bottom:8px">Việc của ba mẹ</div>
+        <div class="todo" data-todo="7">
+          <label><input type="checkbox"><span>Đối chiếu điểm IGCSE với điều kiện học tiếp A Level/IB của trường</span></label>
+          <label><input type="checkbox"><span>Chọn 3–4 môn A Level theo ngành đại học mục tiêu</span></label>
+          <label><input type="checkbox"><span>Ghi lại ngày cập nhật trang tuyển sinh, kiểm tra lại trước khi nộp hồ sơ</span></label>
+        </div><p class="todo-st"></p></div>
+      <button type="button" class="next" data-go="0"><span>Xem lại từ đầu<small>Chặng 1</small></span>↺</button>
+    </aside>
+    <div class="main">
+      <div class="card">
+        <h3>4 ngả sau IGCSE</h3>
+        <p class="hint">Bấm từng ngả.</p>
+        <div class="exits" id="exits">
+          <button type="button" data-i="0" aria-pressed="true"><b>A Level / IB Diploma</b><span>Phổ biến nhất cho du học</span></button>
+          <button type="button" data-i="1" aria-pressed="false"><b>Foundation hoặc GED</b><span>Lối rẽ ngắn hơn</span></button>
+          <button type="button" data-i="2" aria-pressed="false"><b>THPT trong nước</b><span>Đổi kế hoạch</span></button>
+          <button type="button" data-i="3" aria-pressed="false"><b>Học nghề quốc tế</b><span>Đi làm sớm</span></button>
+        </div>
+        <div class="out" id="exitOut"></div>
+      </div>
+      <div class="card">
+        <h3>IGCSE trong hồ sơ đại học ở 4 nước</h3>
+        <p class="hint">Ví dụ minh họa. Yêu cầu đổi theo ngành và từng năm, luôn tra trang tuyển sinh chính thức.</p>
+        <div class="tscroll" style="margin-top:12px">
+          <table class="t" style="min-width:640px">
+            <thead><tr><th>Nước · ví dụ</th><th>Vai trò của IGCSE</th><th>Lưu ý</th></tr></thead>
+            <tbody>
+              <tr><td>Anh<br><span class="muted" style="font-weight:400">qua UCAS</span></td><td>Khai báo trong hồ sơ; dùng để xét yêu cầu nền Toán, Tiếng Anh</td><td>Nhiều đại học Anh chấp nhận IGCSE English thay IELTS, tùy chính sách từng trường</td></tr>
+              <tr><td>Canada<br><span class="muted" style="font-weight:400">U of T Engineering</span></td><td>Cần 3 A Level gồm Toán và Lý; Hóa có thể nộp ở mức IGCSE/O Level (khuyến nghị AS/A Level)</td><td>Môn tiên quyết đạt C trở xuống không được xét; nên đạt từ B trở lên</td></tr>
+              <tr><td>Úc<br><span class="muted" style="font-weight:400">ĐH Melbourne</span></td><td>Không nằm trong danh sách văn bằng xét tuyển trực tiếp</td><td>Cần tối thiểu 3 A Level (từ C) hoặc IB Diploma; nếu chỉ có IGCSE phải học Foundation</td></tr>
+              <tr><td>Mỹ<br><span class="muted" style="font-weight:400">ĐH Harvard</span></td><td>Là một phần học bạ 4 năm trung học (lớp 9–12)</td><td>Xét tuyển toàn diện, đánh giá cao sự tiến bộ điểm số qua các năm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="card"><h3>IGCSE làm được</h3><ul class="yn y"><li>Chứng minh nền tảng từng môn</li><li>Mở cửa vào A Level, IB Diploma</li><li>Thay IELTS ở nhiều đại học Anh (tùy trường)</li><li>Đáp ứng môn tiên quyết ở một số trường</li></ul></div>
+        <div class="card"><h3>Tại Việt Nam</h3><ul class="yn n"><li>Không thay bằng tốt nghiệp THCS, THPT</li><li>Không có bảng quy đổi sang thang 10</li><li>Đại học trong nước: chưa có quy định chung, đọc đề án từng trường</li></ul>
+          <p class="note" style="margin-top:10px">Thông tư 13/2021/TT-BGDĐT (sửa đổi bởi Thông tư 07/2024/TT-BGDĐT, hiệu lực 02/11/2024): công nhận văn bằng THCS, THPT nước ngoài do Giám đốc Sở GD&amp;ĐT thực hiện trong 20 ngày làm việc (45 ngày nếu cần xác minh). Thông tư không nhắc tới IGCSE. Tra văn bản mới nhất tại <a href="https://vbpl.vn/" target="_blank" rel="noopener">vbpl.vn</a>.</p></div>
+      </div>
+      <div class="card">
+        <h3>Tải trọn bộ cẩm nang PDF (Khổ A4)</h3>
+        <p class="hint">Lưu bản đầy đủ để đọc offline hoặc in các biểu mẫu (Nhật ký lỗi 8 cột, Kế hoạch 6 tháng, Phiếu phúc khảo).</p>
+        <div class="dlrow">
+          <a class="dlpill" href="./ebook-igcse-2026-rut-gon.pdf" target="_blank" rel="noopener">⬇ Bản rút gọn 31 trang (giữ 100% kiến thức)</a>
+          <a class="dlpill sec" href="./ebook-igcse-2026.pdf" target="_blank" rel="noopener">⬇ Bản đầy đủ 39 trang</a>
+        </div>
+      </div>
+      <div class="contact">
+        <div><h3>Cần trao đổi lộ trình cho con?</h3><p style="opacity:.85;margin-top:4px">Kiến Trẻ International · <a href="https://kientre.education/" target="_blank" rel="noopener">kientre.education</a></p></div>
+        <div class="cb"><span class="cv" id="zalo">Zalo 0866.118.468</span><button type="button" id="copy">Chép số</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">Rút gọn từ ebook "Chinh phục IGCSE từ con số 0" (Kiến Trẻ International, 2026). Đối chiếu đến 26/11/2026 với <a href="https://www.cambridgeinternational.org/" target="_blank" rel="noopener">Cambridge International</a>, <a href="https://qualifications.pearson.com/" target="_blank" rel="noopener">Pearson</a>, <a href="https://www.britishcouncil.vn/" target="_blank" rel="noopener">British Council</a>. Học phí, lệ phí, hạn đăng ký thay đổi theo từng kỳ. Dùng phím ← → để chuyển chặng.</footer>
+
+<!-- Tra cứu nhanh -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="findTitle" aria-hidden="true">
+  <header><h3 id="findTitle">Tra cứu nhanh</h3><button type="button" class="x" id="closeFind" aria-label="Đóng">✕</button></header>
+  <input type="search" id="findQ" placeholder="Gõ tên môn, mã môn hoặc thuật ngữ… (vd. Physics, Lý, 0580, EAR)" autocomplete="off">
+  <div class="res" id="findRes"></div>
+</aside>
+
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const store={get(k,d){try{const v=localStorage.getItem("ktIGCSE:"+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem("ktIGCSE:"+k,JSON.stringify(v))}catch(e){}}};
+function seg(root,attr,fn){root.addEventListener("click",e=>{const b=e.target.closest("button["+attr+"]");if(!b)return;root.querySelectorAll("button["+attr+"]").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));fn(b.getAttribute(attr))})}
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d").replace(/Đ/g,"d").toLowerCase();
+
+/* ---------- roadmap tabs ---------- */
+const stages=$$(".stage"), N=stages.length, road=$("#road");
+stages.forEach((s,i)=>{const b=document.createElement("button");b.type="button";b.className="tab";b.dataset.i=i;
+  b.innerHTML='<span class="b"><span>'+(i+1)+'</span></span><span class="t">'+s.dataset.t+'</span><span class="w">'+s.dataset.w+'</span>';road.appendChild(b)});
+const tabs=$$(".tab");let cur=0;
+function show(i,scroll){
+  cur=Math.max(0,Math.min(N-1,i));
+  stages.forEach((s,j)=>s.classList.toggle("on",j===cur));
+  tabs.forEach((t,j)=>{t.classList.toggle("on",j===cur);t.setAttribute("aria-current",j===cur?"step":"false")});
+  $("#rail").style.width=(cur/(N-1)*100)+"%";
+  $("#pos").textContent=(cur+1)+" / "+N;$("#prev").disabled=cur===0;$("#next").disabled=cur===N-1;
+  const r=road.parentElement,t=tabs[cur];r.scrollTo({left:t.offsetLeft-(r.clientWidth-t.offsetWidth)/2,behavior:"smooth"});
+  if(location.hash!=="#chang-"+(cur+1))history.replaceState(null,"","#chang-"+(cur+1));
+  if(scroll)window.scrollTo({top:0,behavior:"smooth"});
+}
+road.addEventListener("click",e=>{const t=e.target.closest(".tab");if(t)show(+t.dataset.i,true)});
+$("#prev").onclick=()=>show(cur-1,true);$("#next").onclick=()=>show(cur+1,true);
+document.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;const g=b.dataset.go;show(g==="+1"?cur+1:+g,true)});
+addEventListener("keydown",e=>{if(e.target.closest("input,select,textarea")||$("#drawer").classList.contains("on"))return;if(e.key==="ArrowRight")show(cur+1,true);else if(e.key==="ArrowLeft")show(cur-1,true)});
+const fromHash=()=>{const m=/^#chang-(\d)$/.exec(location.hash);return m?+m[1]-1:0};
+addEventListener("hashchange",()=>show(fromHash(),false));
+
+/* ---------- checklists: ✓ trên thanh lộ trình chỉ khi tick đủ ---------- */
+$$(".todo").forEach(t=>{const n=+t.dataset.todo,k="todo"+n;const st=store.get(k,[]);const ins=[...t.querySelectorAll("input")];const lab=t.parentElement.querySelector(".todo-st");
+  const upd=()=>{const c=ins.filter(x=>x.checked).length;lab.textContent="Đã xong "+c+"/"+ins.length+(c===ins.length?" · chặng này đã được đánh dấu ✓ trên lộ trình":"");tabs[n-1].classList.toggle("ok",c===ins.length)};
+  ins.forEach((x,i)=>{x.id=k+"_"+i;x.checked=st.includes(i);x.addEventListener("change",()=>{store.set(k,ins.map((y,j)=>y.checked?j:-1).filter(j=>j>=0));upd()})});upd()});
+
+/* ---------- 1 ---------- */
+$("#flips").addEventListener("click",e=>{const f=e.target.closest(".flip");if(f)f.setAttribute("aria-pressed",f.getAttribute("aria-pressed")==="true"?"false":"true")});
+seg($("#cmpSeg"),"data-c",c=>{$("#cmpBoard").hidden=c!=="board";$("#cmpProg").hidden=c!=="prog"});
+
+/* ---------- 2. readiness: bắt đầu trung tính ---------- */
+const AX=[["Mục tiêu","Sau 16 tuổi: A Level, IB, Foundation hay hệ Việt Nam?"],["Tiếng Anh học thuật","Đọc văn bản dài, viết câu giải thích trọn vẹn"],["Nền tảng môn","Toán và Khoa học cơ bản đã vững"],["Tự học","Ghi chú, quản lý thời gian khi học 6–10 môn"],["Tài chính","Đủ cho 4–5 năm (IGCSE + A Level/IB) và phụ phí"],["Gia đình","Giảm so sánh điểm trong 6 tháng đầu con thích nghi"]];
+const LV=["Sẵn sàng","Cần hỗ trợ","Chưa sẵn sàng"];
+let rv=store.get("ready6",[-1,-1,-1,-1,-1,-1]);
+$("#tiles").innerHTML=AX.map((a,i)=>'<button type="button" class="tile" data-i="'+i+'"><b>'+a[0]+'</b><span>'+a[1]+'</span><em></em></button>').join("");
+function ready(){
+  $$("#tiles .tile").forEach((t,i)=>{t.dataset.v=rv[i];t.querySelector("em").textContent=rv[i]<0?"Bấm để chấm":"● "+LV[rv[i]];t.setAttribute("aria-label",AX[i][0]+": "+(rv[i]<0?"chưa chấm":LV[rv[i]]))});
+  const c=[0,0,0];let done=0;rv.forEach(v=>{if(v>=0){c[v]++;done++}});
+  $("#meter").innerHTML='<i style="width:'+c[0]/6*100+'%;background:var(--green)"></i><i style="width:'+c[1]/6*100+'%;background:var(--amber)"></i><i style="width:'+c[2]/6*100+'%;background:var(--red)"></i>';
+  let msg;
+  if(c[2]>=2)msg='<span class="pill r">Nên chuẩn bị thêm</span> Có '+c[2]+' điều "chưa sẵn sàng". Nên dành <b>3–6 tháng</b> chuẩn bị tiếng Anh học thuật và nền tảng môn trước khi chuyển hệ.';
+  else if(done<6)msg='Đã chấm <b>'+done+'/6</b>. Chấm đủ 6 ô để xem gợi ý.';
+  else msg='<span class="pill g">Có thể bắt đầu</span> Dưới 2 điều "chưa sẵn sàng". '+(c[2]+c[1]?'Lên kế hoạch hỗ trợ cho các ô vàng, đỏ, và ':'')+'tập trung vào 3 việc của 3 tháng đầu ở ô dưới.';
+  $("#readyOut").innerHTML=msg;
+}
+$("#tiles").addEventListener("click",e=>{const t=e.target.closest(".tile");if(!t)return;const i=+t.dataset.i;rv[i]=rv[i]<0?0:(rv[i]+1)%3;store.set("ready6",rv);ready()});
+$("#readyReset").addEventListener("click",()=>{rv=[-1,-1,-1,-1,-1,-1];store.set("ready6",rv);ready()});
+ready();
+
+/* ---------- 3. goal → subjects ---------- */
+const G={
+  y:{s:[["Toán Extended","0580"],["Tiếng Anh","0500/0510"],["Hóa","0620"],["Sinh","0610"],["Lý","0625"]],o:[],t:"Y, Dược cần nền Hóa và Sinh vững. 3 môn Khoa học riêng cho nền sâu và rộng cửa nhất; Co-ordinated Sciences điểm cao vẫn được nhiều trường chấp nhận."},
+  kt:{s:[["Toán Extended","0580"],["Tiếng Anh","0500/0510"],["Lý","0625"],["Hóa","0620"]],o:[["Additional Maths","0606"]],t:"Kỹ thuật cần Toán và Lý mạnh. Additional Maths chỉ khi con thật vững Toán (từ 2025, Paper 1 không dùng máy tính)."},
+  ec:{s:[["Toán Extended","0580"],["Tiếng Anh","0500/0510"],["Kinh tế","0455"]],o:[["Business","0450"]],t:"Môn nền tảng của ngành Kinh tế vẫn là Toán mạnh. Economics, Business giúp làm quen thuật ngữ sớm."},
+  ch:{s:[["Toán Extended","0580"],["Tiếng Anh","0500/0510"],["Lý","0625"],["Hóa","0620"],["Sinh","0610"],["Kinh tế","0455"]],o:[["Computer Science","0478"],["Ngoại ngữ 2",""]],t:"Chưa rõ ngành: giữ cửa mở với Toán Extended, Tiếng Anh, 2–3 môn Khoa học và 1 môn Xã hội/Kinh tế."}
+};
+function goal(g){const d=G[g];
+  $("#chips").innerHTML=d.s.map(x=>'<span class="chip">'+x[0]+(x[1]?' <small>'+x[1]+'</small>':"")+'</span>').join("")+d.o.map(x=>'<span class="chip opt">+ '+x[0]+(x[1]?' <small>'+x[1]+'</small>':"")+'</span>').join("");
+  const n=d.s.length;$("#goalOut").innerHTML='<b>'+n+' môn chính</b> (≈ <span class="num">'+(n*130).toLocaleString("vi-VN")+'</span> giờ học)'+(d.o.length?' + môn gợi ý nét đứt':'')+'. Thêm môn khác cho đủ 7–8 môn, phổ biến nhất. '+d.t;}
+seg($("#goal"),"data-g",goal);goal("ch");
+
+/* scale A*–G | 9–1 */
+const SC={ag:{g:["A*","A","B","C","D","E","F","G"],core:[3,4,5,6,7],ext:[0,1,2,3,4,5],t:'<b>Core</b> tối đa <b>C</b>; <b>Extended</b> từ A* đến E. Muốn A, A* hoặc học tiếp môn đó lên A Level: thi Extended, thường cần đạt <b>B</b> trở lên.'},
+  "91":{g:["9","8","7","6","5","4","3","2","1"],core:[4,5,6,7,8],ext:[0,1,2,3,4,5,6],t:'<b>Core</b> tối đa <b>5</b>; <b>Extended</b> từ 9 đến 3. Muốn học tiếp môn đó lên A Level: thi Extended, thường cần đạt <b>6</b> trở lên.'}};
+function scale(k){const s=SC[k],row=(lbl,on)=>'<span>'+lbl+'</span>'+s.g.map((x,i)=>'<i class="'+(on.includes(i)?"on":"")+'">'+x+'</i>').join("");
+  const el=$("#scale");el.style.gridTemplateColumns="74px repeat("+s.g.length+",minmax(0,1fr))";el.innerHTML=row("Core",s.core)+row("Extended",s.ext);$("#scaleTxt").innerHTML=s.t}
+seg($("#scaleSeg"),"data-s",scale);scale("ag");
+
+/* 15 câu hỏi trường */
+const Q15=[["Hội đồng và môn học",["Trường dạy IGCSE của hội đồng nào (Cambridge, Pearson Edexcel hay OxfordAQA)?","Mở những mã môn nào? Nếu ít học sinh đăng ký, trường có hủy môn không?","Con có được chọn cấp độ thi (Core/Extended hoặc Foundation/Higher) hay trường tự ấn định?","Trường là trung tâm thi trực tiếp hay đăng ký cho học sinh qua British Council?","Nếu Year 10 con cần đổi cấp độ (Extended ↔ Core) hoặc đổi môn, quy trình và hạn chót ra sao?"]],
+  ["Chi phí và cam kết",["Học phí đã gồm lệ phí thi chính thức từng môn chưa, hay đóng riêng từng kỳ?","Lớp con học nhận chứng chỉ quốc tế chính thức hay chỉ chứng nhận hoàn thành của trường?","Mọi cam kết về hệ học và chứng chỉ có ghi rõ trong hợp đồng/văn bản nhập học không?","Ngoài học phí, chi phí phát sinh trong 2 năm (sách, máy tính, thi lại, phúc khảo) gồm những gì?","Nếu gia đình quay về THPT Việt Nam hoặc chuyển trường, học bạ được hỗ trợ chuyển ra sao?"]],
+  ["Chất lượng và đầu ra",["Kết quả thi IGCSE 2 năm gần nhất của trường theo từng môn?","Tỷ lệ giáo viên có kinh nghiệm dạy đúng mã môn và hội đồng đó?","Trường có lộ trình hỗ trợ tiếng Anh học thuật (EAL/ESL) cho học sinh chuyển từ hệ Việt Nam?","Điều kiện điểm IGCSE tối thiểu để con học tiếp môn đó lên A Level / IB tại trường?","Trường thi thử (mock) theo đề thật mấy lần, báo cáo cho phụ huynh theo chu kỳ nào?"]]];
+{
+  let st=store.get("q15",[]);const upd=()=>$("#q15count").textContent="Đã hỏi "+st.length+"/15";
+  $("#q15").innerHTML=Q15.map((g,gi)=>'<details class="acc" name="q15"'+(gi===0?" open":"")+'><summary>'+g[0]+' <span class="muted" style="font-weight:500">· 5 câu</span></summary><div class="q15">'+g[1].map((q,i)=>{const k=gi*5+i;return'<label><input type="checkbox" id="q15_'+k+'" data-k="'+k+'"'+(st.includes(k)?" checked":"")+'><span>'+q+'</span></label>'}).join("")+'</div></details>').join("");
+  $("#q15").addEventListener("change",e=>{const k=+e.target.dataset.k;st=e.target.checked?[...st,k]:st.filter(x=>x!==k);store.set("q15",st);upd()});upd();
+  document.addEventListener("toggle",e=>{const d=e.target;if(!(d instanceof HTMLDetailsElement)||!d.open||d.getAttribute("name")!=="q15")return;$$('details[name="q15"]').forEach(x=>{if(x!==d)x.open=false})},true);
+}
+
+/* ---------- 4 ---------- */
+const SY=[["Không hiểu khái niệm","Hổng kiến thức nền","Đối chiếu Syllabus, học lại đúng chủ đề còn thiếu."],
+  ["Hiểu bài nhưng thiếu ý, thiếu đơn vị","Chưa vững kỹ năng làm bài","So từng câu với mark scheme: mỗi điểm ứng với một ý cụ thể."],
+  ["Đọc lướt, hiểu sai câu hỏi","Rào cản ngôn ngữ học thuật","Gạch chân từ khóa đề (describe, explain…), lập sổ thuật ngữ, tập diễn đạt bằng lời của mình."],
+  ["Bỏ trống câu cuối bài","Thiếu thời gian","Luyện đề bấm giờ, chia phút theo số điểm (Toán 0580: ~1,2 phút/điểm)."]];
+$("#sym").innerHTML=SY.map((s,i)=>'<button type="button" data-i="'+i+'" aria-pressed="'+(i===1)+'"><i>'+(i+1)+'</i>'+s[0]+'</button>').join("");
+function sym(i){$("#symOut").innerHTML='<span class="pill r">Kiểu '+(i+1)+'</span> <b>'+SY[i][1]+'</b><br>Cách sửa: '+SY[i][2]}
+seg($("#sym"),"data-i",i=>sym(+i));sym(1);
+
+/* ---------- 5 ---------- */
+const CD=[["6 tháng trước thi","Chia các môn thành nhóm Đỏ, Vàng, Xanh (ô dưới). Bắt đầu làm đề tổng hợp bấm giờ (yearly past papers)."],
+  ["6 tuần trước thi","Mỗi môn ít nhất 1 đề trọn vẹn bấm giờ mỗi tuần, chấm khắt khe theo mark scheme, cập nhật nhật ký lỗi."],
+  ["2 tuần cuối","Dừng nạp chủ đề mới chưa thật cần. 70% thời gian cho dạng câu chắc điểm, đọc lại nhật ký lỗi, làm 1–2 đề giữ phản xạ."],
+  ["24 giờ trước thi","Kiểm tra phiếu dự thi (Statement of Entry) và giấy tờ. Túi trong suốt: bút đen, bút chì 2B, thước, compa, máy tính đúng quy chuẩn. Dừng học kiến thức mới sau 20:00, ngủ đúng giờ."]];
+function cd(i){$("#countOut").innerHTML="<b>"+CD[i][0]+"</b><br>"+CD[i][1]}
+seg($("#count"),"data-i",i=>cd(+i));cd(0);
+
+/* ---------- 6 ---------- */
+const D={jun:[["18/08/2026","Trả kết quả",0],["20/09/2026","Hạn phúc khảo",1],["04/10/2026","Hạn tải bài làm",0],["Giữa tháng 10/2026","Gửi chứng chỉ",0]],
+  nov:[["14/01/2027","Trả kết quả",0],["26/02/2027","Hạn phúc khảo",1],["12/03/2027","Hạn tải bài làm",0],["Giữa tháng 3/2027","Gửi chứng chỉ",0]]};
+function dates(s){$("#dates").innerHTML=D[s].map(d=>'<div class="'+(d[2]?"k":"")+'"><b>'+d[0]+'</b><span>'+d[1]+'</span></div>').join("")}
+seg($("#series"),"data-s",dates);dates("jun");
+const ear={q1:"1",q2:"e",q3:"y"};
+function earR(){let p,t;
+  if(ear.q3==="n"){p='<span class="pill g">Thường không cần</span>';t="Chỉ nên phúc khảo khi bậc điểm quyết định bước tiếp theo."}
+  else if(ear.q1==="1"){p='<span class="pill a">Nên cân nhắc nộp</span>';t="Thiếu 1–3 điểm thô là có cơ sở"+(ear.q2==="e"?", môn viết luận lại có biên độ chấm rộng hơn":"")+". Xin trường bản sao bài làm, đối chiếu mark scheme, rồi nộp qua trường trước hạn."}
+  else if(ear.q1==="2"){p='<span class="pill a">Xem bài trước</span>';t="Ebook không đưa ngưỡng cho khoảng này. Xin trường bản sao bài làm, cùng giáo viên đối chiếu mark scheme"+(ear.q2==="e"?" (môn viết luận có biên độ chấm rộng hơn)":" (môn tính toán, trắc nghiệm ít thay đổi khi chấm lại)")+" rồi mới quyết định."}
+  else{p='<span class="pill r">Rất khó đổi bậc</span>';t="Cách 6–7 điểm trở lên hiếm khi đổi bậc. Cân nhắc thi lại kỳ sau."}
+  $("#earOut").innerHTML=p+"<br>"+t+'<br><span class="note">Điểm sau phúc khảo có thể tăng, giữ nguyên hoặc giảm. Phí chỉ hoàn nếu bậc điểm môn thay đổi. Cambridge cho trường xem bài miễn phí; thí sinh tự do qua British Council có thể chịu phí xử lý riêng.</span>'}
+["q1","q2","q3"].forEach(q=>seg(document.getElementById(q),"data-v",v=>{ear[q]=v;earR()}));earR();
+
+/* ---------- 7 ---------- */
+const EX=["Học tiếp 2 năm A Level hoặc IB Diploma, rồi xét đại học. Nhiều trường yêu cầu IGCSE đạt B/6 trở lên ở môn muốn học tiếp.",
+  "Foundation (dự bị đại học) giúp chuyển tiếp nhanh vào đại học Anh, Úc. GED là bằng tương đương THPT của Mỹ, dành cho lộ trình Hoa Kỳ.",
+  "Quay về THPT trong nước hoặc hệ tích hợp nếu gia đình đổi kế hoạch. Cần chuẩn bị chuyển đổi sớm, từ lớp 10–11.",
+  "IGCSE là chứng chỉ năng lực nền (Toán, Tiếng Anh) được nhiều cơ sở đào tạo nghề quốc tế công nhận."];
+function ex(i){$("#exitOut").textContent=EX[i]}
+seg($("#exits"),"data-i",i=>ex(+i));ex(0);
+
+$("#copy").addEventListener("click",()=>{const b=$("#copy");const done=()=>{b.textContent="Đã chép";setTimeout(()=>b.textContent="Chép số",1500)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("#zalo"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Nhấn Ctrl+C"};
+  try{navigator.clipboard.writeText("0866118468").then(done,sel)}catch(e){sel()}});
+
+/* ---------- Tra cứu nhanh (Phụ lục C & D) ---------- */
+const SUBJ=[["Mathematics","Toán","0580","0980"],["Additional Mathematics","Toán nâng cao","0606","—"],["International Mathematics","Toán quốc tế","0607","—"],["Physics","Vật lý","0625","0972"],["Chemistry","Hóa học","0620","0971"],["Biology","Sinh học","0610","0970"],["Combined Science (Single Award)","Khoa học tổng hợp, 1 chứng chỉ","0653","—"],["Co-ordinated Sciences (Double Award)","Khoa học phối hợp, 2 chứng chỉ","0654","0973"],["First Language English","Tiếng Anh bản ngữ","0500","0990"],["English as a Second Language","Tiếng Anh ngôn ngữ thứ hai, ESL","0510 / 0511","0991 / 0993"],["Economics","Kinh tế","0455","0987"],["Business Studies","Kinh doanh","0450","0986"],["Accounting","Kế toán","0452","0985"],["Geography","Địa lý","0460","0976"],["History","Lịch sử","0470","0977"],["Computer Science","Khoa học máy tính, tin học","0478","0984"],["Information & Communication Technology (ICT)","Công nghệ thông tin, tin học","0417","0983"]];
+const TERMS=[["Syllabus","Đề cương môn học, quy định chính xác nội dung kiến thức và cấu trúc thi"],["Component / Paper","Một bài thi thành phần của môn học"],["Core / Extended","Cấp cơ bản / cấp mở rộng (Cambridge)"],["Foundation / Higher","Cấp cơ bản / cấp cao (Pearson Edexcel)"],["Linear / Modular","Thi gộp toàn bộ cuối khóa / thi cuốn chiếu tách từng học phần"],["Exam series","Kỳ thi chính thức trong năm (vd. May/June hoặc Oct/Nov)"],["Assessment objectives (AO)","Mục tiêu đánh giá và các nhóm kỹ năng được chấm điểm"],["Command word","Động từ mệnh lệnh trong đề quy định cách trả lời (State, Explain, Evaluate…)"],["Mark scheme","Hướng dẫn chấm điểm chi tiết của hội đồng thi"],["Examiner report","Báo cáo tổng kết của giám khảo sau kỳ thi về lỗi sai phổ biến"],["Past paper","Đề thi thật các năm trước (theo chuyên đề topical hoặc theo năm yearly)"],["Mock exam","Kỳ thi thử tại trường để chẩn đoán mức độ sẵn sàng"],["Predicted grade","Điểm dự đoán của giáo viên"],["Grade threshold / boundary","Ngưỡng điểm thô tối thiểu để đạt mỗi bậc điểm"],["Statement of Results","Phiếu báo điểm tạm thời công bố trong ngày trả kết quả"],["Component Marks Report","Báo cáo điểm chi tiết từng bài thi thành phần, gửi riêng cho trường/trung tâm thi"],["Certificate","Chứng chỉ chính thức bản cứng, phát sau ngày báo điểm 1–2 tháng"],["Cambridge ICE","Chứng nhận nhóm cho thí sinh thi đủ tối thiểu 7 môn thuộc 5 lĩnh vực"],["Coursework","Bài dự án / hồ sơ thực hành nộp chấm thay hoặc song song bài thi viết"],["Speaking endorsement","Chứng nhận kỹ năng Nói đi kèm môn Tiếng Anh (vd. 0500, 0510)"],["Enquiry about Results (EAR)","Quy trình đề nghị phúc khảo bài thi"],["Access to Scripts","Dịch vụ xem lại bản sao bài làm đã chấm của thí sinh"],["Private candidate","Thí sinh tự do (tự học và đăng ký thi qua British Council)"],["Alternative to Practical","Bài thi viết đánh giá kỹ năng thí nghiệm thay thi phòng lab (Paper 6 ở Cambridge)"],["Access arrangements","Điều chỉnh điều kiện thi đặc biệt cho thí sinh có nhu cầu hỗ trợ được phê duyệt"],["Guided learning hours","Số giờ học có hướng dẫn khuyến nghị cho một môn (~130 giờ ở Cambridge IGCSE)"]];
+const tok=s=>" "+norm(s).replace(/[^a-z0-9*]+/g," ")+" ";const SI=SUBJ.map(s=>tok(s.join(" "))),TI=TERMS.map(t=>tok(t.join(" ")));
+function find(){
+  const q=tok($("#findQ").value).trim();
+  const sub=SUBJ.filter((s,i)=>!q||SI[i].includes(" "+q)),ter=TERMS.filter((t,i)=>!q||TI[i].includes(" "+q));
+  let h="";
+  if(sub.length)h+='<div><h4>Mã môn Cambridge · '+sub.length+'</h4><div class="dl">'+sub.map(s=>'<div><b>'+s[0]+'</b><span class="muted">'+s[1]+'</span><div class="codes"><span>A*–G: '+s[2]+'</span><span class="n">9–1: '+s[3]+'</span></div></div>').join("")+'</div>'+(q?'':'<p class="note" style="margin-top:8px">Pearson Edexcel dùng mã 4 ký tự bắt đầu bằng 4 (vd. Mathematics A 4MA1, Mathematics B 4MB1). OxfordAQA dùng mã bắt đầu bằng 92 (vd. Mathematics 9260).</p>')+'</div>';
+  if(ter.length)h+='<div><h4>Thuật ngữ · '+ter.length+'</h4><div class="dl">'+ter.map(t=>'<div><b>'+t[0]+'</b>'+t[1]+'</div>').join("")+'</div></div>';
+  $("#findRes").innerHTML=h||'<p class="empty">Không tìm thấy. Thử tên tiếng Anh, tiếng Việt hoặc mã môn (vd. 0625).</p>';
+}
+let lastFocus=null;
+function openFind(){lastFocus=document.activeElement;$("#drawer").classList.add("on");$("#scrim").classList.add("on");$("#drawer").setAttribute("aria-hidden","false");find();setTimeout(()=>$("#findQ").focus(),50)}
+function closeFind(){$("#drawer").classList.remove("on");$("#scrim").classList.remove("on");$("#drawer").setAttribute("aria-hidden","true");if(lastFocus)lastFocus.focus()}
+$("#openFind").onclick=openFind;$("#closeFind").onclick=closeFind;$("#scrim").onclick=closeFind;
+$("#findQ").addEventListener("input",find);
+addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#drawer").classList.contains("on"))closeFind()});
+
+show(fromHash(),false);
+})();
+</script>
+</body>
+</html>
