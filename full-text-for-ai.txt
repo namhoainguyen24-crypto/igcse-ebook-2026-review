@@ -238,10 +238,10 @@ Foundation và Higher ở một số môn; hỗ
 trợ cả lộ trình Linear và Modular cho nhiều
 môn quốc tế
 Kỳ thi chính
-Tháng 5–6 và Tháng 10–11
-Tháng 5–6 và Tháng 11 (lưu ý: kỳ tháng 11
-triển khai từ năm 2023 và không mở đủ
-mọi môn; lúc ra mắt mở 24 môn)
+Tháng 5–6 và cuối tháng 9–11
+Tháng 5–6 và Tháng 11 (thay thế hoàn toàn
+kỳ tháng 1 từ 2023; không mở đủ mọi môn,
+lúc ra mắt có 24 môn)
 IGCSE có bị đánh giá thấp hơn GCSE của học sinh bản xứ tại Anh không?
 Không. Cơ quan công nhận văn bằng của Anh (Ecctis / UK NARIC, 2019) xác nhận cả Cambridge
 IGCSE và Pearson Edexcel International GCSE đều tương đương hoàn toàn với GCSE cải cách của
@@ -372,8 +372,9 @@ IB MYP (Middle Years)
 11–16 TUỔI
 Bản chất: Khung chương trình liên môn (eAssessment
 & ePortfolio).
-Khác IGCSE: Triết lý đánh giá khác; không cấp chứng
-chỉ rời từng môn.
+Khác IGCSE: Khung liên môn; chỉ cấp kết quả từng
+môn (MYP course results) nếu trường đăng ký
+eAssessment.
 Cambridge AS & A Level
 16+ TUỔI
 Bản chất: Chứng chỉ dự bị đại học chuyên sâu
@@ -429,10 +430,10 @@ Diploma): Phổ biến nhất cho du học. Môn và bậc
 môn đó (nhiều trường yêu cầu tối thiểu B/6 ở
 Khoa học IGCSE mới cho học A Level).
 02
-Chương trình Dự bị Đại học (Foundation) hoặc
-GED: Dành cho học sinh muốn rút ngắn thời gian
-hoặc chuyển hướng sang các trường đại học tại
-Úc, Anh, Mỹ mà không qua A Level/IB.
+Dự bị Đại học (Foundation) hoặc GED (Mỹ):
+Khóa Foundation giúp chuyển tiếp nhanh sang
+ĐH Anh, Úc; còn GED là bằng tương đương THPT
+Mỹ dành cho lộ trình Hoa Kỳ.
 03
 Chuyển tiếp sang THPT trong nước hoặc hệ tích
 hợp: Phù hợp nếu gia đình đổi kế hoạch và muốn
@@ -492,12 +493,12 @@ CHƯƠNG 3
 PHẦN I · HIỂU ĐÚNG
 3.3
 IGCSE tại Việt Nam
-Công nhận văn bằng: Theo Thông tư 13/2021/TT-BGDĐT (văn bản hợp nhất 05/VBHN-
-BGDĐT, sửa đổi có hiệu lực từ 02/11/2024; nguồn: vbpl.vn), việc công nhận văn bằng THCS,
-THPT do nước ngoài cấp do Giám đốc Sở GD&ĐT thực hiện trong 20 ngày làm việc (45 ngày
-nếu cần xác minh). Thông tư không nhắc tới IGCSE. Vì IGCSE là chứng chỉ từng môn, không
-phải văn bằng tốt nghiệp, gia đình cần hỏi trực tiếp Sở GD&ĐT nơi cư trú nếu có nhu cầu liên
-thông.
+Công nhận văn bằng: Theo Thông tư 13/2021/TT-BGDĐT (sửa đổi bởi Thông tư 07/2024/TT-
+BGDĐT, hiệu lực từ 02/11/2024; văn bản hợp nhất 05/VBHN-BGDĐT; luôn đối chiếu cập nhật
+mới nhất tại vbpl.vn), việc công nhận văn bằng THCS, THPT do nước ngoài cấp do Giám đốc
+Sở GD&ĐT thực hiện trong 20 ngày làm việc (45 ngày nếu cần xác minh). Thông tư không
+nhắc tới IGCSE. Vì IGCSE là chứng chỉ từng môn, không phải văn bằng tốt nghiệp, gia đình
+cần hỏi trực tiếp Sở GD&ĐT nơi cư trú nếu có nhu cầu liên thông.
 Vì sao không có bảng quy đổi IGCSE sang thang 10? Có ba lý do: (1) Điểm IGCSE là bậc,
 không phải phần trăm — cùng một số điểm thô có thể ra bậc khác nhau ở hai kỳ thi vì ngưỡng
 điểm thay đổi theo độ khó đề; (2) Học sinh Core chỉ đạt tối đa C nên “C” của Core và “C” của
@@ -625,11 +626,11 @@ Học bổ trợ ngoài giờ: Học phổ thông Việt Nam ban ngày, học th
 trung tâm/gia sư. Linh hoạt, tiết kiệm nhưng dễ quá tải nếu ôm đồm quá nhiều môn.
 05
 Tự học & Thi tự do: Đăng ký thi trực tiếp qua British Council Việt Nam (Hà Nội & TP.HCM,
-2 kỳ/năm: May/June và Oct/Nov). Hạn đăng ký thường đóng trước kỳ thi 2–3 tháng (với kỳ
-tháng 11 hằng năm, hạn chuẩn của Cambridge thường rơi vào đầu tháng 8 và Pearson vào
-đầu tháng 9 — kiểm tra ngày chính xác từng kỳ tại britishcouncil.vn). Lệ phí thi tự do tham
-khảo: khoảng 4–6 triệu VNĐ/môn tùy môn và đợt đăng ký chuẩn hay muộn (xem biểu phí
-chính thức từng kỳ trên trang British Council).
+2 kỳ/năm: May/June và cuối tháng 9–11). Hạn đăng ký chuẩn của Cambridge cho kỳ tháng
+11 là 16/08 (theo Key Dates 2026), nhưng British Council luôn đóng hạn nội bộ sớm hơn
+(thường sớm hơn 1–3 tuần so với hạn hội đồng; luôn kiểm tra lịch từng kỳ tại
+britishcouncil.vn). Lệ phí thi tự do tham khảo: khoảng 4–6 triệu VNĐ/môn tùy môn và đợt
+đăng ký chuẩn hay muộn (xem biểu phí chính thức từng kỳ trên trang British Council).
 Cảnh báo thực hành: Thí sinh tự do cần tránh các môn có coursework/portfolio bắt buộc; ở
 IGCSE Sciences có Paper 6 (Alternative to Practical) thay phòng lab, nhưng lên Cambridge
 AS/A Level Sciences không có lựa chọn thay thế này (ngược lại, Pearson Edexcel
@@ -647,7 +648,7 @@ CHƯƠNG 4
 PHẦN II · CHỌN ĐÚNG
 4.4
 15 câu nên hỏi trường trước khi đăng ký nhập học (Câu 01–12)
-Hãy mang danh sách 15 câu hỏi dưới đây (bản in có ô ghi chú ở Phụ lục B2) khi đi trao đổi tuyển
+Hãy mang danh sách 15 câu hỏi dưới đây (bản in có ô ghi chú ở Phụ lục B3) khi đi trao đổi tuyển
 sinh với nhà trường:
 01
 Trường giảng dạy IGCSE của hội đồng khảo thí nào
@@ -814,7 +815,7 @@ cầu nộp dự án thực hành (portfolio) hay thi
 thí nghiệm trực tiếp không (rất quan trọng
 nếu thi tự do).
 5.4
-Cây quyết định chọn tổ hợp môn (bản in tại Phụ lục B3)
+Cây quyết định chọn tổ hợp môn (bản in tại Phụ lục B2)
 MỤC TIÊU SAU TUỔI 16
 Đã rõ ngành đại học chưa?
 ĐÃ RÕ NGÀNH (Y / Kỹ thuật / Kinh tế)
@@ -988,9 +989,9 @@ giờ
 Khác biệt với Pearson Edexcel: Pearson Edexcel International GCSE dùng cấp Foundation
 và Higher thay cho Core và Extended ở một số môn (Mathematics A có cả hai cấp;
 Mathematics B chỉ có Higher). Bên cạnh lộ trình thi cuối khóa (Linear), hiện nay Pearson còn
-triển khai song song lộ trình cuốn chiếu (Modular) cho 14 môn quốc tế lớn (như Toán A, Lý,
-Hóa, Sinh, Kinh tế, Tiếng Anh A; riêng ESL chỉ có dạng Modular), cho phép học sinh thi tách
-từng học phần qua các kỳ.
+triển khai song song lộ trình cuốn chiếu (Modular) cho nhiều môn quốc tế lớn (như Toán A,
+Lý, Hóa, Sinh, Kinh tế, Tiếng Anh A; riêng ESL mã 4XES2 được thiết kế theo dạng Modular 4
+học phần), cho phép học sinh thi tách từng học phần qua các kỳ.
 4 ĐIỂM PHỤ HUYNH CẦN KIỂM TRA TRÊN BẢNG ASSESSMENT OVERVIEW
 (1) Tỷ trọng điểm từng Paper để không xem nhẹ bài trắc nghiệm hay bài thực hành; (2) Paper
 nào cấm máy tính; (3) Thí sinh tự do có chọn được Paper 6 (Alternative to Practical) thay
@@ -1088,18 +1089,18 @@ chuỗi: nở ra
 Q14
 Quadratic
 eq.
-Lỗi 2
-(Trình bày)
-Chỉ ghi kết quả x
-= 3
-Hiện bước biến đổi
-nhân tử (x−3)
-(x+2)=0 (method
-mark)
-Luôn viết rõ
-bước tách
-nghiệm trước
-đáp án
+Lỗi 2 (Kỹ
+năng)
+Chỉ ghi x = 3
+(thiếu bước &
+thiếu nghiệm)
+Tách (x−3)(x+2)=0
+→ đủ 2 nghiệm x = 3
+hoặc x = −2
+Viết đủ bước
+tách nhân tử
+và kiểm đủ
+mọi nghiệm
 29/10
 7.3
 Chiến lược bứt phá điểm số theo từng nhóm môn
@@ -1205,8 +1206,9 @@ vạch ra.
 2. Đừng đánh đổi giấc ngủ lấy giờ cày đề:
 Thiếu ngủ làm giảm trực tiếp khả năng đọc hiểu đề tiếng Anh và gây ra những lỗi tính toán
 ngớ ngẩn. Các khuyến nghị sức khỏe cho lứa tuổi 13–18 đều nhấn mạnh cần ngủ đủ 8–10
-tiếng mỗi đêm kèm 30 phút vận động thể chất mỗi ngày để giải tỏa căng thẳng; nếu lo âu kéo
-dài, hãy chia sẻ sớm với cha mẹ hoặc thầy cô.
+tiếng mỗi đêm kèm ít nhất 60 phút vận động thể chất mỗi ngày (theo khuyến nghị của WHO
+cho nhóm 5–17 tuổi) để giải tỏa căng thẳng; nếu lo âu kéo dài, hãy chia sẻ sớm với cha mẹ
+hoặc thầy cô.
 3. Chiến thuật quản lý thời gian trong phòng thi:
 Nguyên tắc tham khảo là khoảng 1–1,2 phút/điểm (chính xác nhất là lấy tổng số phút chia cho
 tổng số điểm của từng Paper trước khi bắt đầu — ví dụ Toán 0580 Paper 2 là 120 phút / 100
@@ -1291,7 +1293,9 @@ Chỉ hoàn phí nếu bậc điểm
 tổng môn (syllabus grade) thay
 đổi
 Lưu ý Pearson Edexcel: Pearson cũng cung cấp dịch vụ Access to Scripts và Review of Marking qua trường/trung tâm
-thi với hạn nộp riêng từng kỳ trên qualifications.pearson.com.
+thi với hạn nộp riêng từng kỳ trên qualifications.pearson.com. Hạn tải bài Access to Scripts (Cambridge 2026): 04/10
+(kỳ June) và 12/03 năm sau (kỳ Nov); nếu cần điểm gấp để nhập học, hãy hỏi trường về dịch vụ phúc khảo ưu tiên
+(Priority).
 Khung quyết định 3 câu hỏi trước khi nộp đơn phúc khảo (bản in tại Phụ lục B6):
 01
 Khoảng cách ngưỡng điểm:
@@ -1640,7 +1644,7 @@ gia đình
 ☐
 ☐
 ☐
-B3. Phiếu nháp & Cây chọn tổ hợp môn (Chương 5 — Mục 5.4)
+B2. Phiếu nháp & Cây chọn tổ hợp môn (Chương 5 — Mục 5.4)
 Bước xác định
 Ghi chú của gia đình & học sinh
 1. Hướng ngành đại học dự kiến
@@ -1658,7 +1662,7 @@ Kiến Trẻ International · Chinh phục IGCSE từ con số 0
 ==================== TRANG 33 / 39 ====================
 PHỤ LỤC B
 BỘ CÔNG CỤ IN ĐƯỢC
-B2. Phiếu kiểm 15 câu hỏi trường trước khi đăng ký nhập học (Mục 4.4)
+B3. Phiếu kiểm 15 câu hỏi trường trước khi đăng ký nhập học (Mục 4.4)
 In trang này khi đi tham quan hoặc phỏng vấn tuyển sinh cùng nhà trường.
 #
 Nội dung cần hỏi trường
